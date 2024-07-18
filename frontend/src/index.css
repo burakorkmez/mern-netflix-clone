@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hero-bg {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1)), url("hero.png");
+}
+
+.shimmer {
+	animation: shimmer 2s infinite linear;
+	background: linear-gradient(to right, #2c2c2c 4%, #333 25%, #2c2c2c 36%);
+	background-size: 1000px 100%;
+}
+
+@keyframes shimmer {
+	0% {
+		background-position: -1000px 0;
+	}
+	100% {
+		background-position: 1000px 0;
+	}
+}
+
+.error-page--content::before {
+	background: radial-gradient(
+		ellipse at center,
+		rgba(0, 0, 0, 0.5) 0,
+		rgba(0, 0, 0, 0.2) 45%,
+		rgba(0, 0, 0, 0.1) 55%,
+		transparent 70%
+	);
+	bottom: -10vw;
+	content: "";
+	left: 10vw;
+	position: absolute;
+	right: 10vw;
+	top: -10vw;
+	z-index: -1;
+}
